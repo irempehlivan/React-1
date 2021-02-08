@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container, Row } from "reactstrap";
+import CategoryList from "./CategoryList";
+import Navi from "./Navi";
+import ProductList from "./ProductList";
 
+ 
 function App() {
+
+  let deneme = {info : "titleVeri", count : "5"}
+  var asd = function() {
+    console.log("fonksiyon çalıştı");
+    return "deneme"
+  };
+  var deneme2 = {...deneme,asd};
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Container>
+        <Row>
+        <Navi></Navi>
+        </Row>
+        <Row>
+        <CategoryList title={deneme2}/>
+        </Row>
+        <Row>
+        <ProductList title='2'/>
+        </Row>
+      </Container>
+      <h3> Hello from react</h3> 
+  
+    
     </div>
+    
   );
 }
 
